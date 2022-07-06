@@ -1,0 +1,24 @@
+
+body > table{
+    width:80%;
+}
+
+table{
+    margin: auto;
+    margin-top: 50px;
+    border-collapse:collapse;
+}
+
+table .datalist{
+    width:100%;
+}
+
+td, th{
+    border:1px solid #DDDDDD;
+    text-align: center;
+    padding: 10px 5px;
+}
+
+tr:nth-child(even), table .datalist thead > tr{
+    background-color: #DDDDDD;
+}

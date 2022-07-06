@@ -1,0 +1,3 @@
+bloodbanks      --> Database Name
+blood           --> Collection Name For Admin(index.js)
+patientinfo     --> Collection Name For patient Information(patient.js)

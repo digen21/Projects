@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable= no">
+    <title>Patient-Reqest-Panel</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <img src="blood.jpg" alt="image" class="headimage">
+        <nav>
+            <ul class="links">
+                <li><a href="home.html" class="active" target="_self">Home</a></li>
+                <li><a href="patientreq.html">Patient</a></li>
+                <li><a href="">Donor</a></li>
+                <li><a href=admin.html" target="_self">Admin</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+        </nav>
+            <a href="" class="cta"><button class="">Contact</button></a>
+    </header>
+
+
+
+
+    <!-- Sign Up Page -->
+    <div class="pform">
+
+        <div class="pformres">
+                
+            <form action="/send" id="frm" method="post" >
+                <div class="adlogo">
+                    <img src="patient.png" alt="Patient Logo" id="ptlogo2">
+                </div>
+
+
+
+
+                <!-- Patient Request -->
+
+
+                <div class="patient fadein">
+
+                        <!-- Patient Name -->
+                    <div class="name">
+                        <label>Patient Name</label>
+                        <input type="text" id="name" name="name" placeholder="Patient Name">
+                    </div>
+
+                    <!-- Phone No -->
+                    <div class="phno">
+                        <label>Phone No</label>
+                        <input type="text" id="phno" name="phno" placeholder="Phone No">
+                        <!-- <p id="validation"></p> -->
+                    </div>
+
+
+
+                    <!-- Address -->
+                    <div class="add">
+                        <label>Address</label>
+                        <input type="text" id="add" name="add" placeholder="Address">
+                        <!-- <p id="validation"></p> -->
+                    </div>
+
+
+                    <!-- Gender -->
+                    <div class="gender">
+                        <label>Gender</label>
+
+                        <span>Male</span>
+                        <input type="radio" id="male" name="gender">
+                        
+                        <span>Female</span>
+                        <input type="radio" id="female" name="gender">
+                    </div>
+
+                    <!-- Age -->
+                    <div class="age">
+                        <label>Age</label>
+                        <input type="number" id="age" name="age" placeholder="Age">
+                        <!-- <p id="validation"></p> -->
+                    </div>
+
+
+                    <!-- Blood Group -->
+                    <div class="bg">
+                        <label for="bg">Blood Group</label>
+                            <select name="bg" id="bloodGroup">
+                                <option value="Select">Select</option>
+                                <option value="a">A+</option>
+                                <option value="a-">A-</option>
+                                <option value="b">B+</option>
+                                <option value="b-">B-</option>
+                                <option value="o">O+</option>
+                                <option value="o-">O-</option>
+                                <option value="ab">AB+</option>
+                                <option value="ab-">AB-</option>
+                            </select>
+                    </div>
+
+                    <!-- Disease -->
+                    <div class="disease">
+                        <label for="bg">Disease</label>
+                            <select name="disease" id="disease">
+                                <option value="Select">Select</option>
+                                <option value="Cancer">Cancer</option>
+                                <option value="Diabetes">Diabetes</option>
+                                <option value="Other">Sichness</option>
+                                <option value="Nothing">Nothing</option>
+                            </select>
+                    </div>
+
+                    <div class="paswd">
+                        <label>Password</label>
+                        <input type="password" id="password" name="password" placeholder="Password">
+                    </div>
+
+                    <!-- Submit Button -->
+                        <button type="submit" id="submit">Send Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+    <script src="admin-panel.js"></script>
+</html>
+
+<!-- Next Page Will Be On Patient Request Panel To Show The Request Sent By The Patient -->

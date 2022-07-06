@@ -1,0 +1,1 @@
+//From patientReq.html file storing data of patient in admin panel
