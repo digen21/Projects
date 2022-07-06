@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cal.css" type="text/css">
+    <script type="text/javascript">
+        function display(num)
+        {
+            document.getElementById('screen').value += num;
+            return num;
+        }
+
+        function equal()
+        {
+           let x = document.getElementById('screen').value;
+           let y = eval(x);
+
+           document.getElementById('screen').value = y;
+        }
+
+        function clear()
+        {
+            document.getElementById('screen').value =  "";
+        }
+        function del()
+        {
+            document.getElementById('screen').value = "";
+        }
+
+    </script>
+       
+    <title>My Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <input type="text" placeholder="0" id="screen">
+            <button onclick="display('7')">7</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('+')">+</button>
+           
+
+            <button onclick="display('4')">4</button>
+            <button onclick="display('5')">5</button> 
+            <button onclick="display('6')">6</button>
+            <button onclick="display('%')">%</button>
+
+
+            <button onclick="display('1')">1</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('*')">*</button>
+
+            <button onclick="display('0')">0</button>
+            <button onclick="display('00')">00</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="display('/')">/</button>
+            
+            
+  
+            <button class="equal" onclick="equal('=')">=</button>
+            <button onclick="display('-')">-</button> 
+            <button onclick="del()" class="del">CLEAR</button>
+
+            
+        </div>
+    </div>
+</body>
+</html>

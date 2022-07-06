@@ -1,0 +1,55 @@
+*
+{
+    background-color: lightblue;
+    justify-content:center;
+}
+
+.head{
+    font-family: cursive, sans-serif;
+    color: lime;
+}
+h1{
+    font-family: sans-serif;
+}
+#submit
+{
+    height:30px;
+    width: 30px;
+    border-radius:15px;
+    border: none;
+    color: black;
+    background-color:lime;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.16);
+    opacity: 0.6;
+    transition: 0.5s;
+    display: inline-block;
+}
+
+#submit:hover {
+   opacity: 1;
+}
+input{
+
+    
+    border-radius:10px;
+    border-color:white;
+    border: none;
+    background-color:white;
+    width: 300px;
+    height: 30px;
+    gap: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.16);
+    word-spacing: 5px; 
+    display: fixed;
+
+}
+.container
+{
+    margin: 5rem;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}

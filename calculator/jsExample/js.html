@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JsExample</title>
+    </head>
+
+    <body>
+        <!-- <form id="myfrm">
+        Title<input type="text"  id="titletext" placeholder="Enter name"><br><br>
+        Body<input type="text" id="bodytext" placeholder="Enter "><br><br>
+        User ID<input type="text" id="userid" placeholder="Enter userud"><br>S</br>
+        <input type="submit" value="Submit" id="saveform" name="submit">
+
+    </form> -->
+        <p id="ajax">Hello There</p>
+        <script>
+
+
+        //var accepted every where.
+        //let accepted only within curly braces.
+        //const accepted only within curly braces.
+
+        //In var we can assign new value and can redclare the variable with the same name
+        //ex:  var a = "Hello";  ---  var a = "World"; --- a = "hi";
+
+        //In let we can not assign new value but we can redclare the variable
+        //ex: var a = "Hello"; --- var a = "World";(<= will show an error) --- a = "hii";
+
+        //In const we can not resign and redclare the variable. The const means the value of variable remain constant
+
+
+
+        // if(3 > 2)
+        // {
+        //     const x = "hello";
+        // }
+        // document.write(x);  //error
+
+
+        //template String
+
+
+        // var use = "hello";
+        // var greet = use + "world";        //old method of concatination
+        // //console.log(greet);
+
+        // var t = ` ${use} world`;    //using dollar sign and curly brackets 
+        // console.log(t);
+
+
+//--------------------------------------------------------------------------    
+
+
+        //    -----> Javascript Arrow Function <-----
+
+
+        //old method
+
+        // function hello()
+        // {
+        //     console.log("Hello");
+        // }
+        // //hello();
+
+
+        // let hi = function(){
+        //     console.log("Hello");
+        // }
+        // hi();
+
+
+
+        //                              -----> Arrow Function <-----
+
+
+
+
+        // let hello = () => console.log("Hello");
+        // hello();            //when only one statement is there
+
+        //                     //can write both
+        // let hi = ()=>
+        // {
+        //     console.log("I am Arrow Function");
+        // }
+        // hi();
+
+        // let welcome = (name) =>
+        // {
+        //     return `Hello and welcome ${name}`;
+        // }
+        // console.log(welcome("Digen"));
+
+        // let name = (name, age) =>
+        // {
+        //     return `Your name is ${name} and age is ${age}`;
+        // }
+        // console.log(name("Digen", 22));
+
+
+
+//      Functions with multiple arguments
+
+
+
+        // let sum = (n1, n2) =>
+        // {
+        //     return n1 + n2;
+        // }
+        // console.log(sum(10, 20));
+        // console.log(sum(10, 20, 30)); //this will print only sum of 10 and 20...
+
+        //so to solve this problem....
+
+        //           array will be used 
+
+        // let sum = (...args) =>     //...args called the "REST OPERATOR". Can take any variable name insted of args
+        // {
+        //     console.log(...args);
+        //     let s = 0;
+        //     for(let i in args)
+        //     {
+        //         s += args[i];
+        //     }
+        //     console.log(s);
+        // }
+
+        // sum(10,20);
+        // sum(10,20,30);
+        // sum("Hello", 10,20); //will take whole values as a string
+
+        //
+
+        // let str = (name,course, ...args) =>
+        // {
+        //     console.log(`${args}`);
+        //     s = 0;
+        //     for(let i in args)
+        //     {
+        //         s += args[i];
+        //     }
+        //     console.log(s);
+        //     console.log(name);
+        //     console.log(course);
+
+        // }
+        // str("Hello","js", 10, 20);
+
+
+
+//        "SPREAD OPERATOR" used to send array as an multiple arguments
+
+
+
+        // let sum = (name, ...args) =>
+        // {
+        //     document.write(`hello ${name}`);
+        //     let s = 0;
+        //     for(let i in args)
+        //     {
+        //         s += args[i];
+        //     }
+        //     console.log(name);
+        //     console.log(s);
+        // }
+        // var arr = [10,20,30,40,50];
+
+        // sum("Hello", ...arr);
+
+
+
+
+    //----------------------------------------------------------------
+
+
+
+        // var a1 = [10,20,30,];
+        // var a2 = [...a1];
+        // a2.push(40);
+        // a1.push(30);
+        // a3 = a1.concat(a2);
+        // console.log(a3);
+
+        // //using spread operator instead
+
+        // console.log(...a1, ...a2);
+        // console.log(5,...a1, ...a2,50); //we can add value too using spread operator
+
+        // console.log(a1);
+        // console.log(a2);
+
+
+        //         -----> Spread operator In Object <-----
+
+
+
+        // var obj = {
+        //     name : "Digen",
+        //     age : 25
+        // };
+        // var obj2 = {
+        //     course : "Javascript"
+        // };
+
+        // var ob3 = {...obj, ...obj2};
+        // console.log(ob3);
+
+
+        // var name = "Hello";
+        // var course = "Javascript";
+        // let obj = {
+        //     name : name    
+        // }
+        // console.log(obj);
+
+        // let ob2 = {
+        //     name, course           //if you know your variable name and value name are the same
+        // }
+        // console.log(ob2);
+
+        // //using variable  property name
+        // let n = "name";
+        // let ob3 = {
+        //     [n] : "Hello"
+        // }
+        // console.log(ob3);
+
+        // var n1 = "student";
+
+
+        // let obj4 = {
+        //     [n1 + "name"] : "Digen"         //n1 + "name" = studentname 
+        // }
+        // console.log(obj4);
+
+        // //use functio
+        //          let n2 = "student";
+
+        //         //let course = "javascript";
+        // //        var detail;
+        //         let obj5 = {
+        //             [n2 + "name"] : "Digen", course,
+
+        //            // detail() or
+        //            detail : function()
+        //             {
+        //                 return `${this.studentname} is student of ${this.course}`;
+        //                 //             n + name;
+        //             }
+        //         }
+        //  console.log(obj5);
+        //  console.log(obj5.detail());
+        // var fname = "Hello";
+
+
+
+        //       -----> Destructuring Array <-----
+
+
+        //          Normal Array
+
+
+        //    let user = ["Hello", 22, "NVS"];
+        // //    let name = user[0];
+        // //    let age = user[1];
+        // //    console.log(user[0] + " "+user[1]);
+
+
+        // Array of ES6 version of JS
+
+        //let[name,age = 18, city] = user;  //age with default value
+        // console.log(name);
+        // console.log(age);
+        // console.log(city);
+
+        //---------------------------------------------------------------
+
+        //      -----> Ex of nested array <-----
+
+        // let arr = ["hello", 22,"world", ["Male", 50000]];
+
+        // let[name,age,city,[gender,salary]] = arr;
+        // console.log(name);
+        // console.log(age);;
+        // console.log(city);;
+        // console.log(gender);
+        // console.log(salary);
+
+        //Array with REST Operator
+        // let nArray = ["hello", 22,"world"];
+
+        // let[name, ...arra]= nArray;
+        // console.log(name);
+        // console.log(arra);
+
+        //--------------------------------------------------------
+
+
+        //        -----> Array With function <-----
+        //
+        // let fArray = ([name, age, city]) =>
+        //     {
+        //         console.log(name);
+        //         console.log(age);
+        //         console.log(city);
+        //     }
+        //     fArray(["hello", 22,"world"]);
+
+        //2
+        // let f2Array = () => {
+        //     return (["hello", 22,"world"]);
+        // }
+        // let[name, age, city] = f2Array();
+        // console.log(name);
+
+        //----------------------------------------------------------
+
+
+        //      -----> Destructuring Object <-----
+
+        // let usr = 
+        // {
+        //     name: "Hello",
+        //     age: 22
+        // };
+        // let{name,age} = usr;    //the parameter in curly brackets must be same as key values of object
+        // console.log(name);
+        // console.log(age);  //will probvide value of single variable
+
+
+
+        // let user1 = {
+        //     name: "hello",
+        //     age: 22,
+        //     city: "world"
+        // }
+        // let{name:n, age:a, city:c} = user1;
+        // console.log(n);
+        // console.log(a);
+        // console.log(c);
+
+
+        //-------------------------------------------------------
+
+
+        //         -----> JS OOPs Overview <-----
+
+
+
+        //Class Object Properties Methods Constructor
+        //Only one constructor can be used at a time in Class
+        // class hello{
+        //     // constructor() //constructor without parameter
+        //     // {
+        //     //     let name;
+        //     //     console.log("Hello");  //Constructor Method No Need To Call...
+        //     //                             //Constructor Method Will call Automatically
+        //     // }
+        //     constructor(name, age)  //constructor with parameter
+        //     {
+        //         this.name = name;
+        //         this.age = age;
+        //         console.log("Constructor with parameter"); 
+        //     }
+
+
+        //     message()     //prototype Method
+        //     {
+        //         document.write(`You name is ${this.name} and age is ${this.age}`); //this keyword suggest that varible name used in constructor will used here
+        //     }
+
+
+        //      static sorry()     //static Method No need to create object in case of static method
+        //     {                   //staic can not be called using obejct
+        //         console.log('Static mehod');
+        //     }
+        // }
+
+        // //Create object
+
+        // let a = new hello("Hello there", 25);
+
+        // //a.name = 'Hello World';   //value passed in "name" variable as a arguments..
+
+        // //calling object
+        // a.message()
+
+        // //calling static  
+        // hello.sorry();
+
+
+        //--------------------------------------------------------------------
+
+
+        //         -----> Inheritance In JS <-----
+
+
+        //Method and properties of one class are inherited by another class
+        // Child class contains methods and properties of parent class and it also contains its
+        // own methods and properties
+
+
+        //   document.writeln("<h3>Inheritance Real Life Example</h3>");
+        //   class employee{
+        //       constructor(name,age,salary){
+        //           this.name = name;
+        //           this.age = age;
+        //           this.salary = salary;
+        //       }
+
+        //        info(){
+        //           document.writeln(`<h4>EmName: ${this.name}<br>
+        //                         Eage: ${this.age}<br>
+        //                         Esalary: ${this.salary}</h4><br><br>`);
+        //       }
+        //   }
+        //     class eInfo extends employee{
+        //       info()
+        //       {
+        //         super.info();
+        //         let ta = 10000;
+        //         let da = 5000;
+
+        //       let totalsalary = this.salary + ta + da;
+        //       document.writeln(`<h4>EmName: ${this.name}<br>
+        //                           Eage: ${this.age}<br>
+        //                           Totalsalary: ${totalsalary}</h4><br><br>`);
+        //       }
+        //   }
+
+        //   class test extends eInfo
+        //   {
+        //        tinfo()
+        //       {
+        //       super.info();
+        //       }
+        //   }
+        //   let i = new test("Digen", 22, 25000);
+        //   let d = new employee("Hello", 22, 25000);
+        //   i.tinfo();
+
+
+
+        //----------------------------------------------------------
+
+
+        //         -----> JS Modules <-----
+
+
+        //variable, function and classes can be used in another file from the main file
+        //Two Modules are there 1. Import And 2. Export Modules
+
+        // Export Example (in file1.js) --> export let name = "Hello";
+        //                (in file2.js) --> import{name} from './file1.js'; To use Variable(name) in file2.js
+        //can use functions and methods too same as variable
+        //To Include in html file --> <script type="module" src="./fiel2.js">
+
+        //---------------------------------------------------------------
+
+
+
+        //         -----> JS Promise  (Important Topic) <-----
+
+
+
+        //Three Stages  1. Panding 2. FullFilled 3. Rejected
+
+        // method:- promise()     condition:- True:- Resolve()   if Resolve()  --> then()
+        //                        condition:- False:- Reject()   if Reject()   --> catch()
+
+
+        //         function prom(a,b){
+        //             return new Promise(function(resolve, reject){
+        //                 console.log('Fecting Data, Please Wait');
+        //                 setTimeout(() => {
+        //                    var c = a/b;
+        //                     if(a,b)       //checking two condition
+        //                     {
+        //                         resolve(`Success ${c}`);
+        //                     }
+        //                 else
+        //                     {
+        //                         reject("Failed");
+        //                     }}, 2000)
+        //             });
+
+        //         }
+
+        // //creating function when condition is resolved
+        //         let resolved = (result) =>{
+        //             console.log(result);
+        //         }
+        //         let rejected = (error) =>{
+        //             console.log(error);
+        //         }
+        //       //prom(true).then(resolved);    // true :- true  
+        //       //prom(true).catch(rejected);   //not false :-  op = success
+
+        //       // OR
+        //       prom(5,3).then(resolved).catch(rejected); //Method Chain
+
+        //       //OR
+        //     //   prom(false).then((result) =>{
+        //     //       console.log(result);
+        //     //   }).catch((error) =>{
+        //     //       console.log(error);
+        //     //   })
+
+        //----------------------------------------------------------
+
+
+        //            ----->Promise.all in JS<-----
+
+
+
+        // if incase of if we use then and catch many times out length of code will increase
+        // can check multiple promises into one single promise.all function
+        // If all promises are true / resolved then and then only "Then" will run("Required to be resolved all promises")
+        // If one promise is rejected then "Catch" function will be called   
+
+        //syntx :-  Promise.all([p1, p2]).then().catch();
+
+        // No need to write then and catch multiple times...
+
+
+        // let p1 = new Promise((resolve, reject) =>
+        //     {
+        //         setTimeout(
+        //             () => {
+        //             console.log("First promise has been resolved");
+        //             resolve(10);
+        //             }, 1 * 1000);
+        //     });
+
+        //     let p2 = new Promise((resolve, reject) =>
+        //     {
+        //         setTimeout(
+        //             () => {
+        //             console.log("Second promise has been resolved");
+        //             resolve(20);
+        //             }, 1 * 2000);
+        //     }); 
+
+        //     let p3 = new Promise((resolve, reject) =>
+        //     {
+        //         setTimeout(
+        //             () => {
+        //             console.log("Third promise has been failed");
+        //             reject("Failed");
+        //             }, 1 * 3000);
+        //     });
+
+        //One Promise has been failed.... so the result will not shown..
+
+
+
+
+        // let total = 0;
+        // Promise.all([p1,p2,p3]).then((result) =>{
+        //     for(i in result){
+        //         total += result[i];
+        //     }
+
+
+        //     console.log(`result: ${result}`);
+        //     console.log(`total: ${total}`);
+        // }).catch((error) => {
+        //     console.log(`error: ${error}`);
+        // });
+
+
+        //-----------------------------------------------------------------------
+
+
+        //              -----> JS AJAX <-----
+
+
+
+        //Fullform:- Asyncronous Javascript And XML
+        //It is a technique to create fast and dynamic web pages
+
+        //  XML http request ----------> Server
+        //           Respond <-----------Server
+
+        //XML http request are used to send a request to the server
+        //XML http request divided into  steps and it is know as "ReadyState"
+        //0. Request not intialised
+        //1. Server connection established
+        //2. Request received
+        //3. Processing request
+        //4. Request finished and response is ready
+
+
+
+        // let loaddata = () =>{
+        // var xhttp = new XMLHttpRequest();
+
+        // xhttp.onreadystatechange = function() {
+        //     if(xhttp.readyState == 4 && xhttp.status == 200 ){
+        //         console.log(xhttp.responseText);
+        //         document.getElementById('ajax').innerHTML = xhttp.responseText;
+        //     }
+        //     else if(xhttp.readyState == 4 && xhttp.status == 404){
+
+        //         document.getElementById('ajax').innerHTML = "File Not Found";
+        //     }
+        // }
+        // setTimeout( () =>{
+        //     xhttp.open("GET","https://jsonplaceholder.typicode.com/posts", true);
+        //     xhttp.open("method", "filename.txt / link ", async mode true / false);
+        //                                                                  use true to use ajax function to its optimum 
+        //     xhttp.send();
+        // }, 5000) }
+
+        //--------------------------------------------------------------------
+
+        //               ----> JS Fetch <----
+
+
+
+        //used to insert, update, delete, read
+        //syntax:- fetch();
+        //fetch(filename/URL);    ------> return promise
+
+        //promise contains then and catch
+
+        //fetch(filename/URL).then(function(response) {
+        //     return response.text() or json();    
+        //}).then(function(result) {
+        //      console.log(result);        //final result      
+        // })
+        //                <----OR---->
+
+        //.catch(function(error){
+        //     console.log(error);    
+        // });
+
+
+        // fetch("file.json")
+        // .then(function(response) {
+        //     return(response.json()); 
+        // }).then((data) =>{
+        //     console.log(data);
+
+        //     for(var x in data) {
+        //         document.write(`${data[x].name} - ${data[x].city}   <br>  `);  //incase of object
+        //         //just to read data from json file
+        //     }  
+        // })
+        // .catch(function(error){
+        //     document.write("Can't fetch data");
+        //     console.log(error);
+        // })
+
+
+        //                   -----> Fetch() - Insert, Update, Delete,Read <-----
+
+
+
+        //      fetch(file/url,{
+        //          method : "POST" or "PUT" or "DELETE",
+        //          body : data, (form data/ json data/ txt )
+        //          header : {
+        //               'Content-Type': 'application/json',  or 'Content-type': 'application/x-www-form-urlencoded'
+        //              },
+        //       });
+
+        //       POST   :- Used when data inserted
+        //       PUT    :- Used when update server data
+        //       DELETE :- Used when delete server data
+        //       GET    :- Used to read server data
+
+        // 'Content-Type' : 'application/x-www-form-urlencoded' :- used to send data of form
+        // 'content-type' : 'application/json'                  :- used to send data of json file
+
+
+        //Insert Data
+        // fetch('https://jsonplaceholder.typicode.com/posts', {
+        // method: 'POST',
+        // body: JSON.stringify
+        // ({
+        //     title: 'Hello',
+        //     body: 'har',
+        //     userId: 1,
+        // }),
+        // headers: {
+        //     'Content-type': 'application/json; charset=UTF-8',
+        // },
+        // })
+        // .then((response) => response.json())
+        // .then((json) => console.log(json));
+
+
+
+        //Delete Data
+        // fetch('https://jsonplaceholder.typicode.com/posts/1', 
+        // {
+        //     method: 'DELETE',
+        // });
+
+        // // 1 in url suggest to delete the number 
+
+
+        // //Update data
+        // fetch('https://jsonplaceholder.typicode.com/posts/1', {
+        // method: 'PUT',
+        // body: JSON.stringify({
+        //     id: 1,
+        //     title: 'foo',
+        //     body: 'bar',
+        //     userId: 1,
+        // }),
+        // headers: {
+        //     'Content-type': 'application/json; charset=UTF-8',
+        // },
+        // })
+        // .then((response) => response.json())
+        // .then((json) => console.log(json));
+
+
+        //Inserting Data Using Form on server
+
+
+        // document.getElementById('saveform').addEventListener("click", (e) =>{
+        //     e.preventDefault();   //Stopping refresing page
+
+        // //     var obj = {
+        // //     title: document.getElementById('titletext').value,
+        // //     body: document.getElementById('bodytext').value,
+        // //     userId: document.getElementById('userid').value,
+        // // };
+
+        //                 fetch('https://jsonplaceholder.typicode.com/posts', {
+        //     method: 'POST',
+        //     body:   new FormData(document.getElementById('myfrm')),            //JSON.stringify(obj),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        //     })
+        //     .then((response) => response.json())
+        //     .then((json) => console.log(json));
+
+        // });
+
+
+
+        //---------------------------------------------------------------
+
+        //         -----> Async And Await Function <-----
+
+
+        //normal function
+
+
+        // let test = () =>{
+        //     return "hello";
+        // }
+        // console.log(test());
+
+        //                                          Async Function
+
+
+        //  async function test(){
+        //     return "Hello";
+        // }
+        // test().then((result) => {
+        //     console.log(result);
+        // });
+
+        //                           OR
+        // let test = async () => "Hello";       //Whern there is one line of statement
+        // test().then((result) => {
+        //     console.log(result);
+        // })
+
+
+        //                                           Await Method
+
+
+        //Works under Async Function
+        // let test =  async () =>{
+        //     console.log("A:2");
+        //     await console.log("B:3");       //Wait From Here...  Do This After Printing The Statement that are outside of the function
+        //     console.log("C:4");
+        // }
+        // test();
+        // console.log("D:1");                 // Do This First After A:2
+        // console.log("E:4");                 //    '' ''
+
+        //OP ---->  A B D E C
+
+
+
+        // let test = async () => {                    //Sequence Of Printing
+        //     console.log("message2");                        // (2)
+        //     const response = await fetch("file.json");      // (4)
+        //     console.log("Message3");                        // (5)
+        //     const file = await response.json();
+
+        //     return file;
+        // }
+        // console.log("message1");                            //  (1)
+        // let a = test();    //Object
+        // console.log("message4");                            //  (3)
+        // console.log(a);
+
+
+
+        // let test = async () => {                    
+
+        // const response = await fetch("file.json");      
+        // const file = await response.json();
+
+        // return file;
+
+        //                              OR
+
+
+        // return (await fetch("file.json")).json();
+        // }                            
+        // test().then((resp) => {
+        //         console.log(resp);
+        // })
+        // .catch((err) => {
+        //         console.log(err);
+        // });
+
+
+
+        //----- ----- Using Try And Catch Method   (No Need To Write .catch() )
+
+
+        // let test = async () => {
+        //     try
+        //     {
+        //         const response = await fetch("file.json");      
+        //         const file = await response.json();
+
+        //         return file;      
+        //     } 
+        //     catch (error)
+        //     {
+        //         console.log(error);
+        //     }
+
+        // }
+        // test().then((resp) => {
+        //         console.log(resp);
+        //     });
+
+
+        //----------------------------------------------------------
+
+
+        //                ----> JS Symbol() <----
+
+
+        // Used When We Want to use unique value
+
+        //     var x = Symbol("Hello");
+        //     var y = Symbol("Hello");
+
+        //     console.log(x);
+        //     console.log(y);
+
+        //     console.log(x == y);     // Ans :- False
+        //    // alert(x);               // Error   
+        //     alert(x.toString());     //To ShoW on webpage                    
+        //     alert(x.description);    //To see the description of variable
+
+
+
+        //    Using JS Symbol inside Object
+
+
+        // let age = Symbol("age");
+
+        // let user = {
+        //     name: "John",
+        //     course: "JS",
+        //     //[age] : 25
+        // };
+        // //console.log(user);
+
+        // //      OR
+
+        // user[age] = 25;
+        // user["gender"] = "Male";
+
+        // console.log(user);
+        // console.log(user.name);     //To See The Value of the object
+        // console.log(user.age);      //Error (Undefined)
+        // console.log(user[age]);     //Write Inside The Square Bracket To See the value of Symbol
+
+        // for(var key in user) {
+        //     console.log(key);         // The Value of age will be skiped
+        // }                             // The Value of the Symbol Can not be used in For loop
+
+        //console.log(JSON.stringify(user)); //To Convert Object in JSON I=inti String
+
+
+
+        //-----------------------------------------------------------------
+
+        //                  -----> JS Iterators <-----
+
+        //iterator can also be used with string and object and with array too
+
+
+        //        * while
+        //        * do..while()
+        //        * for()
+        //        * for..of()
+        //        * for..in()
+        //        * foreach()
+        //        * map()
+
+        //              New-->
+
+        //        * Iterator()
+
+            //traversing using loops
+
+
+            // var x = ["Apple", "Orange", "Grapes"];
+            // for(let i=0; i<x.length; i++){
+            //     console.log(x[i]);
+            // }
+
+            // console.log("-----------------------");
+            
+            // for(let values of x){
+            //     console.log(values);
+            // }
+
+            //In Iterators
+
+            // let y = x[Symbol.iterator]();
+            // y.next();                       //This will not print the apple
+            // console.log(y.next());          //This will print the orange
+            // console.log(y.next().value);    // To see only value("Grapes")
+            // console.log(y.next());          // done: true --> because no value is present after it
+            // console.log(y.next().done);     // to see only true
+            
+            
+            // value: 'Apple' done: false
+            // it return flase in done because it assumes that there is a values are present in array after it
+                
+
+            // What if  there is more values in the array
+                
+            
+            // let num = [100,200,300,400,500,600];
+            //     let iter = num[Symbol.iterator]();
+
+            //     let result = iter.next();
+                
+            //     //using while loop
+                
+            //     while(!result.done){
+            //         console.log(result.value);
+            //         result = iter.next();
+            //     }
+
+
+            //String 
+
+            //  let str = "Hello World!"; 
+
+            // let iter = str[Symbol.iterator]();
+            // let result = iter.next();
+
+            // while(!result.done){
+            //     console.log(result.value);
+            //     result = iter.next();
+            // }
+
+                //op == The ll is comming 2 times so it will print 2 with 1 L
+             
+
+//                  ------> Using for of loop <------
+
+            // for(let x of str){
+            //     console.log(x);
+            // }
+
+            
+        // Creating own iterator
+
+        // let numIterator = (arr) =>{
+        //         var nextNum = 0;
+        //         return{
+        //             next(){
+        //                 if(nextNum < arr.length){
+        //                     return{
+        //                     value: arr[nextNum++],
+        //                     done: false
+
+        // // It will print the false until there is no values   
+        //                 }
+        //                 }
+        //                 else{
+        //                     return{
+        //                         done: true
+        //                     }
+        // // It there is no value it will print true
+        //                 }
+                        
+        //             }
+        //         }
+        // }
+        // let numbers = [100,200,300,400];
+        // let num = numIterator(numbers);
+        // console.log(num.next());
+        // num.next();               // Will not print
+        // console.log(num.next().value);  // To print only value
+        // console.log(num.next().done);   // To print only done0
+        // console.log(num.next());  //true
+        // console.log(num.next());  //true
+            
+        
+//----------------------------------------------------------------        
+            //ex: 2
+
+
+        // let fruitIterator = (farr) =>{
+        //     let nextFruit = 0;
+        //     return{
+        //         next(){
+        //             if(nextFruit < farr.length){
+        //                 return{
+        //                     value: farr[nextFruit++],
+        //                     done: false
+        //                 }
+        //             }
+        //             else{
+        //                 return{
+        //                 done: true
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        
+        // let fruits = ["Apple", "Banana", "Grapes", "Orange"];
+        // let result = fruitIterator(fruits);
+        // console.log(result.next());
+        // console.log(result.next().value);
+        // result.next();
+        // console.log(result.next().done);
+        // console.log(result.next().done);
+        
+//-------------------------------------------------------------------
+
+
+
+//                        -----> JS Generators <-----
+
+            // In case of function we have no control over the printing the value 
+            // Inside the function
+
+            //All The values are print ste by step
+
+            // function test(){
+            //     console.log("Hello");
+            //     console.log("world");
+            //     console.log("Hii")
+            // }
+            // test();
+
+            // So to control the printing of the steps "Generator" is used
+
+            // function *test(){
+            //     console.log("Generator");
+            //     yield "First";   //yeield  = Pause
+            //     console.log("Generator1");
+            //     yield "Second";
+            //     //console.log("Generator2");
+            //     // yield "Third";
+            // }
+
+            // let g = test();
+            // console.log(g);
+            // console.log(g.next());    // will return first value
+            // console.log(g.next()); // will return second value
+            // console.log(g.next()); // undefined yield done: true
+
+
+
+            // function *num(){
+            //     let nextnum =300;
+            //     while(true){
+            //         yield(nextnum++);
+            //     }
+            // }
+
+            //     function *he(){
+            //         yield 55;
+            //         yield ["Node", "React","JS"];
+            //         yield* ["Node", "Angular","JS", "Vu"]
+            //         yield "Sql";
+            //         yield "Mysql";
+            //         yield "Devops"
+            //     }
+
+
+            //  let g = he();
+            // console.log(g.next().value);
+            // console.log(g.next());
+            
+            // console.log(g.next());
+            // console.log(g.next());
+            // console.log(g.next());
+            // console.log(g.next());
+
+            // //Printing using spread operator
+            // console.log([...g])   //op   ['Sql', 'Mysql', 'Devops']
+
+
+//----------------------------------------------------------------
+
+
+//                        -----> JS Strict <-----
+               
+
+                // "use strict";
+                //work in function, object, array etc etc
+                // a = 10;
+                // console.log(a);   // will throw error
+
+
+                // var a = 10;
+                // console.log(a); // Right Way to print
+            
+//----------------------------------------------------------------
+
+
+//                     -----> JS Error Handling <-----
+
+    // Used to handle to error
+    // flow of execution of program won't be stop
+    // Used mostly when We calling JSON data from server 
+    
+
+
+        // Syntax:
+
+            // try{
+            //     //some code
+            // }
+            // catch(e){
+            //     // msg
+            // }
+
+            // try{
+            //     console.log("Start of try");
+            //     hello;                          //error(not defined)
+            //     console.log("End of try");
+            // }catch(e){
+            //     console.log(e);                // Will Show type of error    
+            //     console.log("Error");         // will be run
+            // }
+
+
+            // try...catch not work syncronously
+            
+            // try{
+            //     setTimeout(function(){
+            //         hello;
+            //     }, 2000)
+            // }catch(e){
+            //     //console.log(e); // Will Show type of error
+            //     console.log("Error");  // The message will  not print
+            // }
+
+
+        //This will work properly
+        //Write try and catch block inside  setTimeout function
+            
+            
+            //     setTimeout(function(){
+            //     try{
+            //         blabla;
+            //     }catch(erroe){
+            //         if(erroe instanceof ReferenceError){
+            //             console.log("ReferenceError");
+            //         }
+            //         else if(erroe instanceof TypeError){
+            //             console.log("TypeError");
+            //         }
+            //         else if(erroe instanceof SyntaxError){
+            //             console.log("SyntaxError");
+            //         }
+            //         else if(erroe instanceof AggregateError){
+            //             console.log("AggregateError");
+            //         }
+            //         else{
+            //             console.log("UnkownError");
+            //         }
+            //     }
+            // },1000);
+
+
+
+    // Errors In JS
+
+//    * EvalError
+//    * RangerError       (Html input(range) type error)
+//    * ReferenceError    (calling that variable or function that not declared Or defined)
+//    * SyntaxError
+//    * TypeError         (number, string, boolean, float, double, Interger)If we declared undefined datatype
+//    * URIError          (If we passed parameter in Uri bar which is false)
+//    * AggregateError    
+
+
+
+                // try {
+                //     var json = '{"name":"Json","age":"21"}';
+                //     //var json = '{"age": "22"}';
+                    
+                    
+                    
+                //     var user = JSON.parse(json);
+                //    //Used when want to convert Server Data Into Object   
+
+
+                //    //let user1 = JSON.stringify(json);
+                //    // Used when want to send data to server through javascript
+                //    // Javascript object will be converted into JSON 
+                    
+                //    if(!user.name){
+                //         throw new Error("Imcomplete Data");
+                //     }
+                //    console.log(user.name);
+                //    console.log(user.age);
+
+
+
+
+                // } catch (error) {
+                //     console.log(error);
+                // }
+                // finally{
+                //     console.log("Finally");  //Always run
+                // }
+
+
+    </script>
+        <!-- <button type="submit" onclick="loaddata()">Click</button> -->
+    </body>
+
+</html>

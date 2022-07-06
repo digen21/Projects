@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch function</title>
+</head>
+<body>
+    <form id="myfrm">
+        Title<input type="text"  id="titletext" placeholder="Enter name"><br><br>
+        Body<input type="text" id="bodytext" placeholder="Enter "><br><br>
+        User ID<input type="text" id="userid" placeholder="Enter userud"><br>S</br>
+        <input type="submit" value="Submit" id="saveform" name="submit">
+
+    </form>
+    <script type="text/javascript">
+         //                  ---->JS Fetch<----
+
+            //used to insert, update, delete, read
+            //syntax:- fetch();
+            //fetch(filename/URL);    ------> return promise
+
+            //promise contains then and catch
+
+            //fetch(filename/URL).then(function(response) {
+            //     return response.text() or json();    
+            //}).then(function(result) {
+            //      console.log(result);        //final result      
+            // })
+            //                <----OR---->
+
+            //.catch(function(error){
+            //     console.log(error);    
+            // });
+
+
+            // fetch("file.json")
+            // .then(function(response) {
+            //     return(response.json()); 
+            // }).then((data) =>{
+            //     console.log(data);
+
+            //     for(var x in data) {
+            //         document.write(`${data[x].name} - ${data[x].city}   <br>  `);  //incase of object
+            //         //just to read data from json file
+            //     }  
+            // })
+            // .catch(function(error){
+            //     document.write("Can't fetch data");
+            //     console.log(error);
+            // })
+
+
+//                   -----> Fetch() - Insert, Update, Delete,Read <-----
+
+
+
+            //      fetch(file/url,{
+            //          method : "POST" or "PUT" or "DELETE",
+            //          body : data, (form data/ json data/ txt )
+            //          header : {
+            //               'Content-Type': 'application/json',  or 'Content-type': 'application/x-www-form-urlencoded'
+            //              },
+            //       });
+
+            //       POST   :- Used when data inserted
+            //       PUT    :- Used when update server data
+            //       DELETE :- Used when delete server data
+            //       GET    :- Used to read server data
+
+            // 'Content-Type' : 'application/x-www-form-urlencoded' :- used to send data of form
+            // 'content-type' : 'application/json'                  :- used to send data of json file
+            
+
+            //Insert Data
+            // fetch('https://jsonplaceholder.typicode.com/posts', {
+            // method: 'POST',
+            // body: JSON.stringify
+            // ({
+            //     title: 'Hello',
+            //     body: 'har',
+            //     userId: 1,
+            // }),
+            // headers: {
+            //     'Content-type': 'application/json; charset=UTF-8',
+            // },
+            // })
+            // .then((response) => response.json())
+            // .then((json) => console.log(json));
+
+
+
+            //Delete Data
+            // fetch('https://jsonplaceholder.typicode.com/posts/1', 
+            // {
+            //     method: 'DELETE',
+            // });
+
+            // // 1 in url suggest to delete the number 
+
+
+            // //Update data
+            // fetch('https://jsonplaceholder.typicode.com/posts/1', {
+            // method: 'PUT',
+            // body: JSON.stringify({
+            //     id: 1,
+            //     title: 'foo',
+            //     body: 'bar',
+            //     userId: 1,
+            // }),
+            // headers: {
+            //     'Content-type': 'application/json; charset=UTF-8',
+            // },
+            // })
+            // .then((response) => response.json())
+            // .then((json) => console.log(json));
+
+            
+            //Inserting Data Using Form on server
+            
+
+            document.getElementById('saveform').addEventListener("click", (e) =>{
+                e.preventDefault();   //Stopping refresing page
+
+            //     var obj = {
+            //     title: document.getElementById('titletext').value,
+            //     body: document.getElementById('bodytext').value,
+            //     userId: document.getElementById('userid').value,
+            // };
+
+                            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body:   new FormData(document.getElementById('myfrm')),            //JSON.stringify(obj),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+                })
+                .then((response) => response.json())
+                .then((json) => console.log(json));
+
+            });
+    </script>
+</body>
+</html>
