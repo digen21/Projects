@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+}
+
+/* body{
+    background-color: rgba(41, 99, 213, 0.963)
+} */
+
+h1{
+    text-align: center;
+    padding: 50px;
+    font-size: 50px;
+    font-family: 'roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper{
+    height: 100vh;
+    background-color: rgba(41, 99, 213, 0.963);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.frm input, button{
+    display: block;
+
+
+}
+
+.frm input{
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    outline: none;
+}
+
+.frm input::placeholder{
+    color: rgba(255, 255, 255, 0.200);
+}
+
+.frm button{
+    padding: 20px 0;
+    font-size: 20px;
+    width: 100%;
+    
+    background-color: #fff;
+    border: none;
+    color: rgba(41, 99, 213, 0.963);
+    border-radius: 10px;
+    transition: 0.4s all ease;
+    cursor: pointer;
+}
+
+.frm button:hover{
+    transform: translateY(-5px);
+}
+
+.quiz{
+    display: grid;
+    grid-template-rows: 60px auto;
+    width: 800px;
+    height: 530px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 10px 30px rgba(0, 0, 0, 0.159);
+    border-radius: 10px;
+}
+
+.quizHeader{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 5px 5px rgba(0, 0,0, 0.05);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.quizBody{
+    background-color: rgba(187, 183, 183, 0.450);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px;
+    
+}
+
+
+.qUser{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.qTimer{
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    background-color: rgba(41, 99, 213, 0.963);
+    padding: 0 30px;
+    color: #fff;
+}
+
+.qList li{
+    list-style: none;
+    margin: 30px 0px;
+}
+
+.option{
+    background-color: #fff;
+    width: 50%;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    user-select: none;
+}
+
+
+.option:hover{
+    cursor: pointer;
+    border: 2px solid rgba(41, 99, 213, 0.963);
+    color: rgba(41, 99, 213, 0.963);
+}
+
+.next{
+    background-color: #fff;
+    color: rgba(41, 99, 213, 0.963);;
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: normal;
+    transition: 0.3s all ease;
+}
+
+.next:hover{
+    cursor: pointer;
+    background-color: rgba(41, 99, 213, 0.963);;
+    color: #fff;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.159);
+
+}
+
+.active{
+    background-color: rgba(41, 99, 213, 0.963);
+    color: #fff !important;
+}
+
+.icon{
+    font-size: 300px;
+    color: #fff;
+    
+}
+.msg{
+    padding-top: 50px;
+    text-align: center;
+}
+
+
+.win, .points, .timer{
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.time,.point{
+    text-align: center;
+    margin-top: 20px;
+    padding-left: 10px;
+}
+.name{
+    text-align: center;
+    padding-left: 5px;
+}
+
+.gif{
+    margin-top: 50px;
+}
+
