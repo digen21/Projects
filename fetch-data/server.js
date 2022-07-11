@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const ejs = require('ejs');
-// const { kStringMaxLength } = require('buffer');
 
 app.set('view engine', 'ejs');
 
