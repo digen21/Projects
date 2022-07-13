@@ -1,0 +1,14 @@
+{
+  "name": "admin-panel",
+  "version": "1.0.0",
+  "description": "Admin Panel Of Blood Bank Management System",
+  "main": "app.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "adminPanel"
+  ],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    user-select: none;
+}
+
+.header{
+    background-color: rgba(255, 0, 0, 0.584);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    
+}
+
+.logo{
+    font-size: 15px;
+    padding: 30px 30px;
+}
+
+.header a{
+    margin-right: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+}
+
+.menu1{
+    width: 20%;
+    background-color: #121227;
+
+}
+
+.menu1 a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+    display: list-item;
+    padding: 30px;
+    border-top: 1px solid rgb(62, 60, 60);
+    border-bottom: 1px solid rgb(62, 60, 60);
+}
+
+.menu1 a:hover{
+    background-color: red;
+    transition: .5s;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+
+.bloods{
+    margin: 50px 50px;
+
+}
+
+.row1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.positive{
+    background-color: #fff;
+    box-shadow: 1px 1px 2px  rgba(0, 0, 0, 0.300);
+    width: 350px;
+    height: 200px;
+    margin: 30px 30px;
+}
+.imgs{
+    padding: 15px;
+}
+
+img{
+    width: 50px;
+    height: auto;
+    margin-top: 5px;
+}
+
+.text{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.cnt{
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: normal;
+    text-align: center;
+}
+.row2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
