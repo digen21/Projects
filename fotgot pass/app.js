@@ -40,7 +40,10 @@ app.get('/forgot-password', (req, res) => {
 })
 
 app.post('/forgot-password', (req, res) => {
-    userTable.findOne({email : req.body.email}, (err, user)   =>{
+    
+//Finding Email That Passed By The User In Input Field And Matching With Data Present In Database
+    
+    userTable.findOne({email : req.body.email}, (err, user) =>{
         if(err){
             console.log(err);
         }
