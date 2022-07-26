@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% dataList.forEach(data => {%>
+            <tr>
+                <td><%= data._id %></td>
+                <td><%= data.email %></td>
+                <td> <%= data.password %>
+                    </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

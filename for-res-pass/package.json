@@ -1,0 +1,23 @@
+{
+  "name": "for-res-pass",
+  "version": "1.0.0",
+  "description": "Forgot Reset Password With Database",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "forgot",
+    "reset",
+    "password"
+  ],
+  "author": "Digen More",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.6"
+  }
+}
