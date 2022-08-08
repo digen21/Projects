@@ -124,22 +124,22 @@ app.get('/reset-password/:id/:token', (req, res) => {
 //     return;
 // }
 
-app.post('/reset-password/:id/:token', (req, res) => {
+app.post('/reset-password/:id/:token',async (req, res) => {
     const { id, token } = req.params;
     // res.send(user);
 
     const { password, password2 } = req.body;
 
-
+    const data= await user.findOne({_id:id});
     //first call the id from the database  
-    user.findOne({ _id: id }, (err, user) => {
-        if (!user) {
-            res.send("Invalid Id");
-            return;
-        }
+    // user.findOne({ _id: id }, async (err, data) => {
+    //     if (!data) {
+    //         res.send("Invalid Id");
+    //         return;
+    //     }
 
     //Validating Token
-    const secret = JWT_SECRET + user.password;
+    const secret = JWT_SECRET + data.password;
     try {
         const payload = jwt.verify(token, secret);
 
@@ -150,20 +150,25 @@ app.post('/reset-password/:id/:token', (req, res) => {
 //--------------------Not Working(Almost There)--------------------
 
 
-        const updatePass =  async () =>{
-            let data = await user.updateOne({ 
-                password: user.password             //old password
+        // const updatePass =  async () =>{
+            let a = await user.updateOne({ 
+                _id: data._id            //old password
             },
-                {$push : {
+                {$set : {
                     password: req.body.password  //pushing new password
                 }});
-            console.log(data);
-            console.log("ID: -" + id)
+            // console.log(a,{ 
+            //     password: user.password             //old password
+            // },
+            //     {$set : {
+            //         password: req.body.password  //pushing new password
+            //     }});
+            // console.log("ID: -" + id)
             // console.log(user);
             res.send("Updated");
             
-        }
-    updatePass();
+    //     }
+    // updatePass();
 
     // Password Is Matched But Not Updating In Database
 
@@ -191,10 +196,10 @@ app.post('/reset-password/:id/:token', (req, res) => {
 
     })
 
-})
 
 
-app.listen(3000, ()=>{console.log((`@ http://localhost:${3000}`))});
+
+app.listen(3000, ()=>{console.log((`🚀 http://localhost:${3000} ` ))});
 
 
 
