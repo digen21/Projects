@@ -1,0 +1,71 @@
+<%- include('include/_header')%>
+
+<!-- Main Container  -->
+<div class="container" id="container">
+
+
+    <!-- Filed names username, email, password  -->
+    <!-- Sign Up Container  -->
+    <div class="form-container sign-up-container">
+        <form action="/register" method="post">
+            <h1>Register</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>Use Email For Registration</span>
+            <input type="text" placeholder="Name" name="username" />
+            <input type="text" placeholder="Email"  name="email"/>
+            <input type="text" placeholder="Password" name="password"/>
+            <input type="password"  placeholder="Confirm-Password" name="password2"/>
+            <button>Sign Up</button>
+        </form>
+    </div>
+
+
+
+    <!-- Sign In Container   -->
+    <div class="form-container sign-in-container">
+        <form action="#">
+            <h1>Sign in</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>Use Your Account</span>
+            <input type="email" name="email" placeholder="Email" />
+            <input type="password" name="password" placeholder="Password" />
+            <a href="#">Forgot your password?</a>
+            <button>Sign In</button>
+        </form>
+    </div>
+
+
+    <!-- Gradient Part  -->
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left over">
+                <img src="./img/logo2.png" alt="" srcset="" id="logo3">
+                <h1>Welcome Back!</h1>
+                <p>Login Wth Your Personal Info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="donate">
+                <img src="./img/donate.webp" alt="donate" id="donate">
+            </div>
+            <div class="overlay-panel overlay-right over">
+                <img src="./img/logo2.png" alt="" srcset="" id="logo3">
+                <h1>Hello, Friend!</h1>
+                <p>Start Donating Blood</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<%- include('include/_footer')%>

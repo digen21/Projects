@@ -1,0 +1,69 @@
+
+
+<div class="ends">
+    <p>@2022 - 2030 | Donate-life Ltd | All Rights Reserved With Copyright & Trademarks</p>
+</div>
+</body>
+<script src="./js/main.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./font/all.js"></script>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="./js/jquery.js"></script>
+<script>
+
+    const header = document.querySelector('header');
+
+    window.addEventListener('scroll', ()=>{
+        header.classList.toggle("sticky", window.scrollY > 0);
+    });
+
+    let menu = document.querySelector('#menu-icon');
+    let navlist = document.querySelector('.navlist');
+
+
+    menu.onclick = ()=>{
+        menu.classList.toggle('x-mark');
+        navlist.classList.toggle('active');
+    }
+
+
+
+    window.onscroll = ()=>{
+        menu.classList.remove('x-mark');
+        navlist.classList.remove('active');
+    }
+
+
+
+    window.addEventListener("scroll", reveal);
+
+    function reveal() {
+        var reveals = document.querySelectorAll('.reveal');
+
+        for(var i = 0; i < reveals.length; i++) {
+
+            var windowHeight = window.innerHeight;
+            var revealsTop = reveals[i].getBoundingClientRect().top;
+            var revealPoint = 150;
+
+            if(revealsTop < windowHeight - revealPoint) {
+                reveals[i].classList.add('active');
+            }
+            else{
+                reveals[i].classList.remove('active');
+            }
+        }
+    }
+
+
+    //JQuery for login page
+		$(document).ready(function () {
+			$('#icon').click(function () {
+				$('ul').toggleClass('show')
+			})
+		})
+
+</script>
+
+</html>
