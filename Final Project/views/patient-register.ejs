@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="homecss.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="../public/font/all.css">
+    <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
+
+</head>
+<body>
+    <!-- header  -->
+    <header>
+        <a href="#" class="logo"><img src="/img/logo4.png" alt=""></a>
+        <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
+
+        <ul class="navlist">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sub-services">Patient</a></li>
+            <li><a href="donor">Donor</a></li>
+            <li><a href="#service">Admin</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#portfolio">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <div class="reg-container">
+        <div class="img">
+            <img src="donate.webp" alt="">
+        </div>
+
+        <div class="txt-content">
+            <h2>Sign In</h2>
+            <div class="social-icon">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="login-form">
+            <form action="/patient-register" method="post">
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="text" name="email" placeholder="example@gmail.com">
+                    <input type="text" name="password" placeholder="Password">
+                    <input type="text" name="cpassword" placeholder="Confirm Password">                    
+                    <button type="submit">Register</button>
+            </form>
+        <p class="text-center">Already a member? <a href="index2.html">Sign In</a></p>
+    </div>
+
+
+<%- include('include/_footer')%>

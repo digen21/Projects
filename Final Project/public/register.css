@@ -1,0 +1,97 @@
+
+
+.reg-container{
+    margin: 0 auto;
+    margin-top: 12rem;
+    margin-bottom: -5rem;
+    background-color: #f8f9fd;
+    max-width: 100%;
+    width: 400px;
+    height: 650px;
+    box-shadow: 10px 5px 40px rgba(0,0,0,0.08);
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    transition:ease 0.3s;
+}
+
+.reg-container .img{
+    overflow: hidden;
+    
+}
+
+.reg-container .img img{
+    width: 100%;
+    height: 250px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.txt-content{
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0px 1rem 1rem;
+}
+
+.txt-content h2{
+    font-size: 1rem;
+    font-weight: 100;
+    margin-left: 30px;
+    font-family: sans-serif;
+}
+
+.reg-container  .social-icon{
+    margin-right: 30px;
+    font-size: 1rem;
+}
+
+.reg-container .social-icon a{
+    color: rgb(75, 75, 75);
+    margin-left: 10px;
+}
+
+.login-form{
+    margin: 2rem auto;
+    width: 100%;
+}
+
+.login-form form{
+    display: grid;
+    width: 70%;
+    grid-gap: 1rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.login-form form input[type="text"]{
+    padding: 8px 8px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    height: 40px;
+    transition: ease .10s;
+}
+
+
+.login-form form button {
+    border-radius: 5px;
+    padding: 10px 10px;
+    border: none;
+    color: white;
+    background: rgb(33, 206, 33);
+    font-weight: 600;
+}
+
+
+
+
+.reg-container p{
+    margin-top: 1rem;
+    text-align: center;
+    font-family: sans-serif;
+    margin-bottom: 0.5rem;
+}
+
+.reg-container p a{
+    text-decoration: none;
+    color: rgb(33, 206, 33);
+}
